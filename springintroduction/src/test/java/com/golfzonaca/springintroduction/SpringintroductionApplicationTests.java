@@ -1,10 +1,10 @@
-package com.golfzonacademy.springcorebasic;
+package com.golfzonaca.springintroduction;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringcorebasicApplicationTests {
+class SpringintroductionApplicationTests {
 
     @Test
     void contextLoads() {

@@ -1,4 +1,4 @@
-package com.golfzonacademy.springcorebasic.controller;
+package com.golfzonaca.springintroduction.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +11,7 @@ public class HelloController {
 
     @GetMapping("hello")
     public String hello(Model model) {
-        model.addAttribute("data", "hello!");
+        model.addAttribute("data", "hello!!!");
         return "hello";
     }
 
@@ -24,7 +24,7 @@ public class HelloController {
     @GetMapping("hello-string")
     @ResponseBody
     public String helloString(@RequestParam("name") String name) {
-        return "hello " + name;
+        return "hello" + name;
     }
 
     @GetMapping("hello-api")

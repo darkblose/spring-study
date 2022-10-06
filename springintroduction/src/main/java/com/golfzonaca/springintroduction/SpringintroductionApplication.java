@@ -1,13 +1,13 @@
-package com.golfzonacademy.springcorebasic;
+package com.golfzonaca.springintroduction;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringcorebasicApplication {
+public class SpringintroductionApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringcorebasicApplication.class, args);
+        SpringApplication.run(SpringintroductionApplication.class, args);
     }
 
 }

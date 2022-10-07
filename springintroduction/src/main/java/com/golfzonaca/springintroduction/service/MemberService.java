@@ -3,11 +3,13 @@ package com.golfzonaca.springintroduction.service;
 import com.golfzonaca.springintroduction.domain.Member;
 import com.golfzonaca.springintroduction.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 // @Service
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;

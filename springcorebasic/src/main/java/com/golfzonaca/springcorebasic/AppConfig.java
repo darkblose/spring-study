@@ -9,21 +9,28 @@ import com.golfzonaca.springcorebasic.member.MemberServiceImpl;
 import com.golfzonaca.springcorebasic.member.MemoryMemberRepository;
 import com.golfzonaca.springcorebasic.order.OrderService;
 import com.golfzonaca.springcorebasic.order.OrderServiceImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class AppConfig {
 
+    @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
 
-    private MemberRepository memberRepository() {
+    @Bean
+    public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
+    @Bean
     public OrderService orderService() {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
+    @Bean
     public DiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
     }

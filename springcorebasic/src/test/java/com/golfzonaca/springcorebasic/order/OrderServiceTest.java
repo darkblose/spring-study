@@ -1,16 +1,24 @@
 package com.golfzonaca.springcorebasic.order;
 
+import com.golfzonaca.springcorebasic.AppConfig;
 import com.golfzonaca.springcorebasic.member.Grade;
 import com.golfzonaca.springcorebasic.member.Member;
 import com.golfzonaca.springcorebasic.member.MemberService;
-import com.golfzonaca.springcorebasic.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class OrderServiceTest {
 
-    private final MemberService memberService = new MemberServiceImpl();
-    private final OrderService orderService = new OrderServiceImpl();
+    MemberService memberService;
+    OrderService orderService;
+
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig appconfig = new AppConfig();
+        memberService = appconfig.memberService();
+        orderService = appconfig.orderService();
+    }
 
     @Test
     void createOrder() {

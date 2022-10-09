@@ -3,12 +3,12 @@ package com.golfzonaca.springcorebasic;
 import com.golfzonaca.springcorebasic.member.Grade;
 import com.golfzonaca.springcorebasic.member.Member;
 import com.golfzonaca.springcorebasic.member.MemberService;
-import com.golfzonaca.springcorebasic.member.MemberServiceImpl;
 
 public class MemberApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 

@@ -11,11 +11,16 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public void join(Member member) {
         memberRepository.save(member);
-
     }
 
     @Override
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
     }
+
+    //ConfigurationSingletonTest 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
 }

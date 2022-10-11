@@ -2,9 +2,12 @@ package com.golfzonaca.springcorebasic.discount;
 
 import com.golfzonaca.springcorebasic.member.Grade;
 import com.golfzonaca.springcorebasic.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;

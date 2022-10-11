@@ -1,5 +1,6 @@
 package com.golfzonaca.springcorebasic.order;
 
+import com.golfzonaca.springcorebasic.annotation.MainDiscountPolicy;
 import com.golfzonaca.springcorebasic.discount.DiscountPolicy;
 import com.golfzonaca.springcorebasic.member.Member;
 import com.golfzonaca.springcorebasic.member.MemberRepository;
@@ -15,7 +16,7 @@ public class OrderServiceImpl implements OrderService {
     private final DiscountPolicy discountPolicy;
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

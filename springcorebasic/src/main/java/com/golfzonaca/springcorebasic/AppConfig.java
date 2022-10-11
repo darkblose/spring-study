@@ -33,6 +33,12 @@ public class AppConfig {
      *  call AppConfig.memberService
      *  call AppConfig.memberRepository
      *  call AppConfig.orderService
+     *
+     *  그렇다면, @Configuration 없이 @Bean만 선언하면 어떻게 될까?
+     *  -> CGLIB로 조작되지 않은 AppConfig가 호출된다.
+     *  -> 하지만, 싱글톤이 깨진다.
+     *  -> 긱자 다른 인스턴스를 생성하여 사용한다.
+     *  -> 스프링 컨테이너가 관리하지 않는, new MemberRepository()로 생성한 것과 동일한 결과가 발생한다.
      */
 
     @Bean

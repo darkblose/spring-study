@@ -1,8 +1,8 @@
 package com.golfzonaca.springcorebasic.scope;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
@@ -31,7 +31,6 @@ public class SingletonWithPrototypeTest1 {
     @Test
     void SingletonClientUserPrototype() {
         ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(ClientBean.class, PrototypeBean.class);
-
         ClientBean clientBean1 = ac.getBean(ClientBean.class);
         int count1 = clientBean1.logic();
         assertThat(count1).isEqualTo(1);
@@ -43,18 +42,12 @@ public class SingletonWithPrototypeTest1 {
 
     @Scope("singleton")
     static class ClientBean {
-//        private final PrototypeBean prototypeBean; // 생성시점에 주입
 
         @Autowired
-        ApplicationContext applicationContext;
-
-//        @Autowired
-//        public ClientBean(PrototypeBean prototypeBean) {
-//            this.prototypeBean = prototypeBean;
-//        }
+        private ObjectProvider<PrototypeBean> prototypeBeansProvider; //생성자 주입으로 바꿔주기
 
         public int logic() {
-            PrototypeBean prototypeBean = applicationContext.getBean(PrototypeBean.class);
+            PrototypeBean prototypeBean = prototypeBeansProvider.getObject();
             prototypeBean.addCount();
             return prototypeBean.getCount();
         }

@@ -1,5 +1,6 @@
 # Study Spring With Inflearn
 
+```mermaid
 gantt
 dateFormat YYYY-MM-DD
 title Hell-O-Spring
@@ -10,3 +11,4 @@ title Hell-O-Spring
     HTTP 기본 지식        :done,      :chap3, 2022-10-13, 2022-10-14
     Spring MVC Vol.1    :active,    :chap4, 2022-10-14, 2022-10-16
     Spring MVC Vol.2    :           :chap5, 2022-10-17, 2022-10-19
+```

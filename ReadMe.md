@@ -10,6 +10,6 @@ title Hell-O-Spring
     Spring 코어 기본   :chap2, 2022-10-08, 5d
     HTTP 기본 지식     :chap3, 2022-10-13, 2d
     Spring MVC Vol.1  :chap4, 2022-10-14, 4d
-    Spring MVC Vol.2  :chap5, 2022-10-18, 3d
+    Spring MVC Vol.2  :chap5, 2022-10-18, 6d
     
 ```

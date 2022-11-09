@@ -2,6 +2,7 @@ package com.golfzonaca.exception;
 
 import com.golfzonaca.exception.interceptor.LogInterceptor;
 import com.golfzonaca.exception.resolver.MyHandlerExceptionResolver;
+import com.golfzonaca.exception.resolver.UserHandlerExceptionHandler;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerExceptionResolver;
@@ -27,6 +28,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
         resolvers.add(new MyHandlerExceptionResolver());
+        resolvers.add(new UserHandlerExceptionHandler());
     }
 
     //    @Bean
